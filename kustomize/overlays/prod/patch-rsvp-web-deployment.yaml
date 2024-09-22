@@ -25,7 +25,7 @@ spec:
         - name: TEXT2
           value: " Application"
         - name: LOGO
-          value: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+          value: https://raw.githubusercontent.com/paichayon321/argocd101-application/main/images/argocd-kube-image250.png
         ports:
         - containerPort: 5000
           name: web-port    
