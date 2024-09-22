@@ -3,5 +3,5 @@ kind: Kustomization
 bases:
   - ../../base
 resources:
-  - rsvp-web-deploymant.yaml
-  - rsvp-web-service.yaml
+  - patch-rsvp-web-deployment.yaml
+  - patch-rsvp-web-service.yaml
