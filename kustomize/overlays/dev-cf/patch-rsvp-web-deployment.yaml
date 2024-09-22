@@ -15,20 +15,9 @@ spec:
       containers: 
       - name: rsvpd-web
         image: paichayon/rsvp
-        env:
-        - name: MONGODB_HOST
-          value: mongodb
-        - name: COMPANY
-          valueFrom:
-            configMapKeyRef:
-              name: myconfig
-              key: key1
-        - name: TEXT1
-          value: "ArgoCD Training  "
-        - name: TEXT2
-          value: " Application"
-        - name: LOGO
-          value: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+        envFrom:
+          - configMapRef:
+              name: rsvp-web-config
         ports:
         - containerPort: 5000
           name: web-port    
