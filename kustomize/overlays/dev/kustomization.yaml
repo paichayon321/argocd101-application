@@ -1,5 +1,6 @@
 resources:
-- ../../base
+- ../../base/rsvp-web-deploymant.yaml
+- ../../base/rsvp-web-service.yaml
 patches:
 - path: rsvp-web-deploymant.yaml
 - path: rsvp-web-service.yaml
