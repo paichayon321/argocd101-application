@@ -5,7 +5,7 @@ patches:
 - path: patch-rsvp-web-service.yaml
 
 configMapGenerator:
-- name: myconfig
+- name: rsvp-web-config
   envs:
      - env.config
 
