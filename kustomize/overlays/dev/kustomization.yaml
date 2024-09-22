@@ -1,7 +1,7 @@
 resources:
   - ../../base/rsvp-web-deploymant.yaml
   - ../../base/rsvp-web-service.yaml
-patchesStrategicMerge:
+patches:
   - rsvp-web-deploymant.yaml
   - rsvp-web-service.yaml
 
