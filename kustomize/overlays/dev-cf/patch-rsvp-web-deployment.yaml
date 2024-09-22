@@ -20,7 +20,7 @@ spec:
           value: mongodb
         - name: COMPANY
           valueFrom:
-            configMapRef:
+            configMapKeyRef:
               name: myconfig
               key: key1
         - name: TEXT1
