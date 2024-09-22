@@ -1,0 +1,11 @@
+resources:
+- ../../base
+patches:
+- path: patch-rsvp-web-deployment.yaml
+- path: patch-rsvp-web-service.yaml
+
+configMapGenerator:
+- name: myconfig
+  envs:
+     - env.config
+
