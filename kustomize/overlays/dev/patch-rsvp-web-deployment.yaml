@@ -19,7 +19,7 @@ spec:
         - name: MONGODB_HOST
           value: mongodb
         - name: COMPANY
-          value: "**** Lab8088 Dev ****"
+          value: "**** Lab8088 Dev2 ****"
         - name: TEXT1
           value: "ArgoCD Training  "
         - name: TEXT2
