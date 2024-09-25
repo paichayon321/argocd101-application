@@ -18,6 +18,8 @@ spec:
         envFrom:
           - configMapRef:
               name: rsvp-web-config
+          - secretRef:
+              name: mysecret
         ports:
         - containerPort: 5000
           name: web-port    
