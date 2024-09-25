@@ -1,5 +1,5 @@
 resources:
-- ../../base-cf
+- ../../base
 - sealed-mysecret.yaml
 patches:
 - path: patch-rsvp-web-deployment.yaml
