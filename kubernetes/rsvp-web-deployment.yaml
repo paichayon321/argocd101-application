@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: rsvp-web
-  namespace: rsvp
 spec:
   replicas: 1
   selector:
