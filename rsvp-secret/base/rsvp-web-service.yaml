@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: rsvp-web
+  labels:
+    app: rsvp-web
+spec:
+  type: NodePort
+  ports:
+  - nodePort: 30013
+    port: 80
+    targetPort: web-port
+    protocol: TCP
+  selector:
+    app: rsvp-web

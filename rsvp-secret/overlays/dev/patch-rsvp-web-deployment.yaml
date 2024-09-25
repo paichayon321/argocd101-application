@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rsvp-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rsvp-web
+  template:
+    metadata:
+      labels:
+        app: rsvp-web
+    spec:
+      containers: 
+      - name: rsvpd-web
+        image: paichayon/rsvp
+        envFrom:
+          - configMapRef:
+              name: rsvp-web-config
+        ports:
+        - containerPort: 5000
+          name: web-port    

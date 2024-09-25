@@ -1,0 +1,5 @@
+resources:
+- rsvp-db-service.yaml
+- rsvp-web-service.yaml
+- rsvp-db-deployment.yaml
+- rsvp-web-deployment.yaml
