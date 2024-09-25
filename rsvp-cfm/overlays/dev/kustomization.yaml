@@ -1,5 +1,5 @@
 resources:
-- ../../base-cf
+- ../../base
 patches:
 - path: patch-rsvp-web-deployment.yaml
 - path: patch-rsvp-web-service.yaml
