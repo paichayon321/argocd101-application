@@ -19,11 +19,11 @@ spec:
         - name: MONGODB_HOST
           value: mongodb
         - name: COMPANY
-          value: "**** Lab8088 Company ****"
+          value: "****Sample Lab8088 Company ****"
         - name: TEXT1
           value: "ArgoCD Training  "
         - name: TEXT2
-          value: " Application"
+          value: " Sample Application"
         - name: LOGO
           value: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
         ports:
