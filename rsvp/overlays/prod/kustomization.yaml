@@ -2,4 +2,4 @@ resources:
 - ../../base
 patches:
 - path: patch-rsvp-web-deployment.yaml
-- path: patch-rsvp-web-service.yaml
+- path: patch-rsvp-ingress.yaml
