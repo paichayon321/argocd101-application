@@ -3,7 +3,6 @@ resources:
 - sealed-mysecret.yaml
 patches:
 - path: patch-rsvp-web-deployment.yaml
-- path: patch-rsvp-web-service.yaml
 - path: rsvp-ingress.yaml
 
 
