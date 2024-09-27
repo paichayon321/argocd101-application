@@ -6,7 +6,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
 spec:
   rules:
-    - host: rsvp-sample.lab8088.online
+    - host: rsvp-cfm.lab8088.online
       http:
         paths:
           - path: /
