@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: apps-92.lab8088.online
+    - host: apps92.lab8088.online
       http:
         paths:
           - path: /rsvp-dev-0(/|$)(.*)
