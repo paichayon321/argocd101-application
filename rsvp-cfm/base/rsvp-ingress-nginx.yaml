@@ -10,7 +10,7 @@ spec:
     - host: apps-92.lab8088.online
       http:
         paths:
-          - path: /rsvp-cfm-92-0
+          - path: /sample
             pathType: Prefix
             backend:
               service:
