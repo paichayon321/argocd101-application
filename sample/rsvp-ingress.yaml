@@ -9,7 +9,7 @@ spec:
     - host: rsvp-sample.lab8088.online
       http:
         paths:
-          - path: /
+          - path: /sample
             pathType: Prefix
             backend:
               service:
