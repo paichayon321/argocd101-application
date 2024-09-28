@@ -14,12 +14,12 @@ spec:
     spec:
       containers: 
       - name: rsvpd-web
-        image: paichayon/rsvp
+        image: paichayon/rsvp:nginx-rewrite
         env:
         - name: MONGODB_HOST
           value: mongodb
         - name: COMPANY
-          value: "**** Lab8088 Dev2 ****"
+          value: "**** Lab8088 Dev ****"
         - name: TEXT1
           value: "ArgoCD Training  "
         - name: TEXT2

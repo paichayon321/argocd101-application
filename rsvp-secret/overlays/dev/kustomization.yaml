@@ -3,7 +3,7 @@ resources:
 - sealed-mysecret.yaml
 patches:
 - path: patch-rsvp-web-deployment.yaml
-- path: patch-rsvp-ingress.yaml
+- path: patch-rsvp-ingress-nginx.yaml
 
 
 configMapGenerator:
