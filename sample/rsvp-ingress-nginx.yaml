@@ -3,8 +3,9 @@ kind: Ingress
 metadata:
   name: rsvp-web
   annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx
   rules:
     - host: apps-92.lab8088.online
       http:
