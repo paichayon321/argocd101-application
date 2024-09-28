@@ -14,7 +14,7 @@ spec:
     spec:
       containers: 
       - name: rsvpd-web
-        image: paichayon/rsvp
+        image: paichayon/rsvp:ingress-rewrite
         env:
         - name: MONGODB_HOST
           value: mongodb
