@@ -13,7 +13,7 @@ spec:
     - host: apps92.lab8088.online
       http:
         paths:
-          - path: /rsvp-0(/|$)(.*)
+          - path: /sample-0(/|$)(.*)
             pathType: Prefix
             backend:
               service:
