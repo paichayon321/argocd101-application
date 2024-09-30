@@ -14,16 +14,13 @@ spec:
         vault.hashicorp.com/agent-inject-secret-login: "secret/login"
         vault.hashicorp.com/agent-inject-template-login: |
           {{- with secret "secret/login" -}}
-          pattoken={{ .Data.data.pattoken }}
+          export pattoken={{ .Data.data.pattoken }}
           {{- end }}
         vault.hashicorp.com/agent-inject-secret-my-first-secret: "secret/my-first-secret"
         vault.hashicorp.com/agent-inject-template-my-first-secret: |
           {{- with secret "secret/my-first-secret" -}}
-          #!/bin/sh
-          set -e
-          username={{ .Data.data.username }}
-          password={{ .Data.data.password }}
-          exec "$@"
+          export username={{ .Data.data.username }}
+          export password={{ .Data.data.password }}
           {{- end }}
         vault.hashicorp.com/role: "vault-role"
       labels:
@@ -44,6 +41,10 @@ spec:
           value: " Application"
         - name: LOGO
           value: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+        - name: pottoken
+          value: /vault/secrets/login
+        - name: username:
+          value: /vault/secrets/my-first-secret 
         ports:
         - containerPort: 5000
           name: web-port
