@@ -44,7 +44,7 @@ spec:
         ports:
         - containerPort: 5000
           name: web-port
-      lifecycle:
-        postStart:
-          exec:
-           command: ["/bin/sh", "-c", "export $(grep -v '^#' /vault/secrets/login | xargs) && export $(grep -v '^#' /vault/secrets/my-first-secret | xargs); exec rsvp-web"]
+        lifecycle:
+          postStart:
+            exec:
+             command: ["/bin/sh", "-c", "export $(grep -v '^#' /vault/secrets/login | xargs) && export $(grep -v '^#' /vault/secrets/my-first-secret | xargs); exec rsvp-web"]
