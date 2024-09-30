@@ -52,3 +52,9 @@ spec:
         ports:
         - containerPort: 5000
           name: web-port
+      volumeMounts:
+      - name: vault-secret
+        mountPath: /vault/secrets
+    volumes:
+    - name: vault-secret
+      emptyDir: {}
