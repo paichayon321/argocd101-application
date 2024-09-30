@@ -27,16 +27,8 @@ spec:
         app: rsvp-web
     spec:
       serviceAccountName: vault-serviceaccount
-      initContainers:
-      - name: secret-init
-        image: busybox
-        command:
-        - /bin/sh
-        - -c
-        - |
-          export $(grep -v '^#' /vault/secrets/login | xargs) && export $(grep -v '^#' /vault/secrets/my-first-secret | xargs)
       containers: 
-      - name: rsvpd-web
+      - name: rsvp-web
         image: paichayon/rsvp:nginx-rewrite
         env:
         - name: MONGODB_HOST
@@ -52,9 +44,7 @@ spec:
         ports:
         - containerPort: 5000
           name: web-port
-        volumeMounts:
-        - name: vault-secret
-          mountPath: /vault/secrets
-      volumes:
-      - name: vault-secret
-        emptyDir: {}
+      lifecycle:
+        postStart:
+          exec:
+           command: ["/bin/sh", "-c", "export $(grep -v '^#' /vault/secrets/login | xargs) && export $(grep -v '^#' /vault/secrets/my-first-secret | xargs); exec rsvp-web"]
