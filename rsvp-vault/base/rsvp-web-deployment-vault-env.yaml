@@ -34,8 +34,8 @@ spec:
         - /bin/sh
         - -c
         - |
-          export $(grep -v '^#' /vault/secret/login | xargs)
-          export $(grep -v '^#' /vault/secret/my-first-secret | xargs)
+          export $(grep -v '^#' /vault/secrets/login | xargs)
+          export $(grep -v '^#' /vault/secrets/my-first-secret | xargs)
       containers: 
       - name: rsvpd-web
         image: paichayon/rsvp:nginx-rewrite
