@@ -19,8 +19,11 @@ spec:
         vault.hashicorp.com/agent-inject-secret-my-first-secret: "secret/my-first-secret"
         vault.hashicorp.com/agent-inject-template-my-first-secret: |
           {{- with secret "secret/my-first-secret" -}}
+          #!/bin/sh
+          set -e
           username={{ .Data.data.username }}
           password={{ .Data.data.password }}
+          exec "$@"
           {{- end }}
         vault.hashicorp.com/role: "vault-role"
       labels:
@@ -44,7 +47,3 @@ spec:
         ports:
         - containerPort: 5000
           name: web-port
-        lifecycle:
-          postStart:
-            exec:
-             command: ["/bin/sh", "-c", "export $(grep -v '^#' /vault/secrets/login | xargs) && export $(grep -v '^#' /vault/secrets/my-first-secret | xargs); exec rsvp-web"]
