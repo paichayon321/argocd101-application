@@ -27,15 +27,18 @@ spec:
         app: rsvp-web
     spec:
       serviceAccountName: vault-serviceaccount
-      containers: 
-      - name: rsvpd-web
-        image: paichayon/rsvp:nginx-rewrite
+      initContainers:
+      - name: secret-init
+        image: busybox
         command:
         - /bin/sh
         - -c
         - |
           export $(grep -v '^#' /vault/secret/login | xargs)
           export $(grep -v '^#' /vault/secret/my-first-secret | xargs)
+      containers: 
+      - name: rsvpd-web
+        image: paichayon/rsvp:nginx-rewrite
         env:
         - name: MONGODB_HOST
           value: mongodb
