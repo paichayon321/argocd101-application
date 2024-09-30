@@ -43,7 +43,7 @@ spec:
           value: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
         - name: pottoken
           value: /vault/secrets/login
-        - name: username:
+        - name: username
           value: /vault/secrets/my-first-secret 
         ports:
         - containerPort: 5000
