@@ -9,26 +9,12 @@ spec:
       app: rsvp-web
   template:
     metadata:
-      annotations:
-        vault.hashicorp.com/agent-inject: "true"
-        vault.hashicorp.com/agent-inject-secret-login: "secret/login"
-        vault.hashicorp.com/agent-inject-template-login: |
-          {{- with secret "secret/login" -}}
-          export pattoken={{ .Data.data.pattoken }}
-          {{- end }}
-        vault.hashicorp.com/agent-inject-secret-my-first-secret: "secret/my-first-secret"
-        vault.hashicorp.com/agent-inject-template-my-first-secret: |
-          {{- with secret "secret/my-first-secret" -}}
-          export username={{ .Data.data.username }}
-          export password={{ .Data.data.password }}
-          {{- end }}
-        vault.hashicorp.com/role: "vault-role"
       labels:
         app: rsvp-web
     spec:
       serviceAccountName: vault-serviceaccount
       containers: 
-      - name: rsvp-web
+      - name: rsvpd-web
         image: paichayon/rsvp:nginx-rewrite
         env:
         - name: MONGODB_HOST
@@ -41,10 +27,16 @@ spec:
           value: " Application"
         - name: LOGO
           value: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
-        - name: pottoken
-          value: /vault/secrets/login
         - name: username
-          value: /vault/secrets/my-first-secret 
+          valueFrom:
+            secretKeyRef:
+               name: secretkv
+               key: username
+        - name: password
+          valueFrom:
+            secretKeyRef:
+               name: secretkv
+               key: password 
         ports:
         - containerPort: 5000
-          name: web-port
+          name: web-port  
