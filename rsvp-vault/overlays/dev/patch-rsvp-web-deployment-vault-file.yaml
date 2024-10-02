@@ -23,7 +23,7 @@ spec:
           username={{ .Data.data.username }}
           password={{ .Data.data.password }}
           {{- end }}
-        vault.hashicorp.com/role: "read-any-ns "
+        vault.hashicorp.com/role: "read-any-ns"
       labels:
         app: rsvp-web
     spec:
