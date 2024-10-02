@@ -30,12 +30,12 @@ spec:
       serviceAccountName: vault-serviceaccount
       containers: 
       - name: rsvpd-web
-        image: paichayon/rsvp:nginx-rewrite
+        image: paichayon/rsvp:loadconfig
         env:
         - name: MONGODB_HOST
           value: mongodb
         - name: COMPANY
-          value: "**** Lab8088 Company ****"
+          value: "**** Lab8088 Company Vault-Test ****"
         - name: TEXT1
           value: "ArgoCD Training  "
         - name: TEXT2
