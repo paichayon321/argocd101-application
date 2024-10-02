@@ -8,11 +8,20 @@ image: paichayon/rsvp:loadconfig is customize image to read data from secret fil
 
 
 
+##  kustomization file for Vaultt Agent Injection
+```
+resources:
+- ../../base
+
+patches:
+- path: patch-rsvp-web-deployment-vault-file.yaml
+- path: patch-rsvp-ingress-nginx.yaml
+```
 
 
 
-
-# kustomization file for Vault Secret Operator
+## kustomization file for Vault Secret Operator
+```
 resources:
 - ../../base
 - rsvp-VaultAuth.yaml
@@ -21,3 +30,4 @@ resources:
 patches:
 - path: patch-rsvp-web-deployment-vault-env.yaml
 - path: patch-rsvp-ingress-nginx.yaml
+```
