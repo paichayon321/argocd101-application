@@ -29,7 +29,7 @@ spec:
     spec:
       serviceAccountName: vault-serviceaccount
       containers: 
-      - name: rsvp-web
+      - name: rsvpd-web
         image: paichayon/rsvp:nginx-rewrite
         env:
         - name: MONGODB_HOST
@@ -45,3 +45,4 @@ spec:
         ports:
         - containerPort: 5000
           name: web-port    
+
