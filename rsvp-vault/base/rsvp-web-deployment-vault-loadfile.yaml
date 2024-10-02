@@ -30,7 +30,7 @@ spec:
       serviceAccountName: vault-serviceaccount
       containers: 
       - name: rsvp-web
-        image: paichayon/rsvp:nginx-rewrite
+        image: paichayon/rsvp:loadconfig
         env:
         - name: MONGODB_HOST
           value: mongodb
