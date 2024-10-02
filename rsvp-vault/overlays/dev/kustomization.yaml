@@ -1,5 +1,7 @@
 resources:
 - ../../base
+- rsvp-VaultS
+- rsvp
 patches:
 - path: patch-rsvp-web-deployment-vault-env.yaml
 - path: patch-rsvp-ingress-nginx.yaml
