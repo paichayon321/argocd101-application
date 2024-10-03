@@ -15,7 +15,7 @@ spec:
       serviceAccountName: vault-serviceaccount
       containers: 
       - name: rsvpd-web
-        image: paichayon/rsvp:readsecret0
+        image: paichayon/rsvp:readsecret
         volumeMounts:
          - name: secret-volume
            mountPath: "/vault/secrets/"  # The directory where secrets will be mounted
