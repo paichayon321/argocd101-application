@@ -16,10 +16,10 @@ spec:
       containers: 
       - name: rsvpd-web
         image: paichayon/rsvp:nginx-rewrite
-      volumeMounts:
-       - name: secret-volume
-         mountPath: "/vault/secrets/"  # The directory where secrets will be mounted
-         readOnly: true
+        volumeMounts:
+         - name: secret-volume
+           mountPath: "/vault/secrets/"  # The directory where secrets will be mounted
+           readOnly: true
         env:
         - name: MONGODB_HOST
           value: mongodb
