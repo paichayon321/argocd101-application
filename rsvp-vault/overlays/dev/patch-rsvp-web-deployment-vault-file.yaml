@@ -12,18 +12,13 @@ spec:
       annotations:
         vault.hashicorp.com/agent-inject: "true"
         vault.hashicorp.com/template-static-secret-render-interval: 30s  
-        vault.hashicorp.com/agent-inject-secret-login: "secret/login"
-        vault.hashicorp.com/agent-inject-template-login: |
-          {{- with secret "secret/login" -}}
-          pattoken={{ .Data.data.pattoken }}
-          {{- end }}
         vault.hashicorp.com/agent-inject-secret-my-first-secret: "secret/my-first-secret"
         vault.hashicorp.com/agent-inject-template-my-first-secret: |
           {{- with secret "secret/my-first-secret" -}}
           username={{ .Data.data.username }}
           password={{ .Data.data.password }}
           {{- end }}
-        vault.hashicorp.com/role: "read-any-ns"
+        vault.hashicorp.com/role: "read-secret-role"
       labels:
         app: rsvp-web
     spec:
