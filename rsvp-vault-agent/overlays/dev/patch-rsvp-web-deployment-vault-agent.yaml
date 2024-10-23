@@ -12,8 +12,8 @@ spec:
       annotations:
         vault.hashicorp.com/agent-inject: "true"
         vault.hashicorp.com/template-static-secret-render-interval: 30s  
-        vault.hashicorp.com/agent-inject-secret-my-first-secret: "secret/rsvp/mysecret"
-        vault.hashicorp.com/agent-inject-template-my-first-secret: |
+        vault.hashicorp.com/agent-inject-secret-mysecret: "secret/rsvp/mysecret"
+        vault.hashicorp.com/agent-inject-template-mysecret: |
           {{- with secret "secret/rsvp/mysecret" -}}
           username={{ .Data.data.username }}
           password={{ .Data.data.password }}
