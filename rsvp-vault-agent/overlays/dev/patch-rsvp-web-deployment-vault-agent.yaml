@@ -25,7 +25,7 @@ spec:
       serviceAccountName: vault-serviceaccount
       containers: 
       - name: rsvpd-web
-        image: paichayon/rsvp:loadconfig
+        image: paichayon/rsvp:loadsecret
         env:
         - name: MONGODB_HOST
           value: mongodb
