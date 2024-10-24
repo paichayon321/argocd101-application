@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rsvp-vault-vso-0
+  namespace: argocd
+spec:
+  destination:
+    namespace: rsvp-vault-vso-0
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: rsvp-vault-vso/overlays/dev
+    repoURL: https://github.com/paichayon321/argocd101-application.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

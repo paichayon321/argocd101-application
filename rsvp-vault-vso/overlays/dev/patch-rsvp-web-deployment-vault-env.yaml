@@ -30,12 +30,12 @@ spec:
         - name: username
           valueFrom:
             secretKeyRef:
-               name: kubesecret-my-first-secret
+               name: kubesecret-mysecret
                key: username
         - name: password
           valueFrom:
             secretKeyRef:
-               name: kubesecret-my-first-secret
+               name: kubesecret-mysecret
                key: password 
         ports:
         - containerPort: 5000
