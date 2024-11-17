@@ -1,8 +1,0 @@
-resources:
-- ../../base
-- rsvp-VaultAuth.yaml
-- rsvp-VaultStaticSecret.yaml
-
-patches:
-- path: patch-rsvp-web-deployment-vault-env-file.yaml
-- path: patch-rsvp-ingress-nginx.yaml
