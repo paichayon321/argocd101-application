@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rsvp-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rsvp-db
+  template:
+    metadata:
+      labels:
+        app: rsvp-db
+    spec:
+      containers: 
+      - name: rsvpd-db
+        image: mongo:3.3
+        env:
+        - name: MONGODB_DATABASE
+          value: rsvpdata
+        - name: MONGO_INITDB_ROOT_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: dbsecret
+              key: password
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: dbsecret
+              key: password
+        ports:
+        - containerPort: 27017
