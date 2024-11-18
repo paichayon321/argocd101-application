@@ -27,7 +27,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: mongodb-secret
-              key: mongo-username
+              key: mongo-password
         volumeMounts:
         - name: init-script
           mountPath: /docker-entrypoint-initdb.d
