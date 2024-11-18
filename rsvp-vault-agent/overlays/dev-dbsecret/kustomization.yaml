@@ -4,3 +4,5 @@ resources:
 patches:
 - path: patch-rsvp-web-deployment-vault-agent.yaml
 - path: patch-rsvp-ingress-nginx.yaml
+- path: mongo-cf.yaml
+- path: mongo-secret.yaml
