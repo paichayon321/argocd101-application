@@ -13,7 +13,7 @@ spec:
     - host: apps91.lab8088.online
       http:
         paths:
-          - path: /vault-agent-0(/|$)(.*)
+          - path: /vault-agent-dbsecret(/|$)(.*)
             pathType: Prefix
             backend:
               service:
