@@ -6,3 +6,4 @@ resources:
 patches:
 - path: patch-rsvp-web-deployment-vault-agent.yaml
 - path: patch-rsvp-ingress-nginx.yaml
+- path: patch-rsvp-db-deployment.yaml
