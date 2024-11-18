@@ -14,19 +14,26 @@ spec:
     spec:
       containers: 
       - name: rsvpd-db
-        image: mongo:3.3
+        image: mongo:6.0
         env:
         - name: MONGODB_DATABASE
           value: rsvpdata
         - name: MONGO_INITDB_ROOT_USERNAME
           valueFrom:
             secretKeyRef:
-              name: dbsecret
-              key: password
+              name: mongodb-secret
+              key: mongo-username
         - name: MONGO_INITDB_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: dbsecret
-              key: password
+              name: mongodb-secret
+              key: mongo-username
+        volumeMounts:
+        - name: init-script
+          mountPath: /docker-entrypoint-initdb.d
         ports:
         - containerPort: 27017
+      volumes:
+      - name: init-script
+        configMap:
+          name: mongodb-init-script
