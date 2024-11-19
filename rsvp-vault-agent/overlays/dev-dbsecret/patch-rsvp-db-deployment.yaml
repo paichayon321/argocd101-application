@@ -16,8 +16,6 @@ spec:
       - name: rsvpd-db
         image: mongo:6.0
         env:
-        - name: MONGODB_DATABASE
-          value: rsvpdata
         - name: MONGO_INITDB_ROOT_USERNAME
           valueFrom:
             secretKeyRef:
