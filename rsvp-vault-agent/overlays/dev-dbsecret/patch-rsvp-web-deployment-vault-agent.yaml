@@ -38,6 +38,10 @@ spec:
           value: " Application"
         - name: LOGO
           value: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+        - name: VAULT_SECRET_NAME
+          value: mysecret
+        - name: VAULT_DB_CRED_NAME
+          value: mongo-creds
         ports:
         - containerPort: 5000
           name: web-port    
