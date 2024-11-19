@@ -1,46 +1,27 @@
-For Demo have two difference image to use
+# For Demo rsvp application integrate with vault by use vault agent injection
 
+There are two sample:
 
-image: paichayon/rsvp:nginx-rewrite is normal image
+# Get kv secret from vault (static)
+1. /overlays/dev
 
-image: paichayon/rsvp:loadsecret is customize image to read data from secret file in volume /vault/secrets
-
-image: paichayon/rsvp:readsecret is customize image to read map secret to volume in volume /vault/secrets
-
-
-##  kustomization file for Vault Agent Injection
 ```
-resources:
-- ../../base
-
-patches:
-- path: patch-rsvp-web-deployment-vault-file.yaml
-- path: patch-rsvp-ingress-nginx.yaml
+kubectl -n test apply -k /overlays/dev
 ```
 
+# Get Database Credential from vault (dynamic)
+2. /overlays/dev-dbsecret
 
-
-## kustomization file for Vault Secret Operator
 ```
-resources:
-- ../../base
-- rsvp-VaultAuth.yaml
-- rsvp-VaultStaticSecret.yaml
-
-patches:
-- path: patch-rsvp-web-deployment-vault-env.yaml
-- path: patch-rsvp-ingress-nginx.yaml
+kubectl -n test apply -k /overlays/dev-dbsecret
 ```
 
+* Require customize rsvp application to read secret file in volume /vault/secrets
 
-## kustomization file for Vault Secret Operator and Map secret to file
-```
-resources:
-- ../../base
-- rsvp-VaultAuth.yaml
-- rsvp-VaultStaticSecret.yaml
 
-patches:
-- path: patch-rsvp-web-deployment-vault-env-file.yaml
-- path: patch-rsvp-ingress-nginx.yaml
-```
+
+
+
+
+
+
