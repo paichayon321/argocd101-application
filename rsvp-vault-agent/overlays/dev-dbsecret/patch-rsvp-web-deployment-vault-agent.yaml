@@ -19,7 +19,7 @@ spec:
           password={{ .Data.data.password }}
           {{- end }}
         vault.hashicorp.com/role: "read-secret-role"
-        vault.hashicorp.com/agent-inject-secret-mongo-creds: "database/creds/my-role"
+        vault.hashicorp.com/agent-inject-secret-mongo-creds: "database/creds/temp-role"
       labels:
         app: rsvp-web
     spec:
