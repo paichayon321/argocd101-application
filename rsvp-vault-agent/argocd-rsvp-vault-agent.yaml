@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: rsvp-vault-agent-0
+  name: rsvp-vault-agent-2
   namespace: argocd
 spec:
   destination:
-    namespace: rsvp-vault-agent-0
+    namespace: rsvp-vault-agent-2
     server: https://kubernetes.default.svc
   project: default
   source:
     path: rsvp-vault-agent/overlays/dev
     repoURL: https://github.com/paichayon321/argocd101-application.git
-    targetRevision: main
+    targetRevision: student2
   syncPolicy:
     automated:
       prune: false
