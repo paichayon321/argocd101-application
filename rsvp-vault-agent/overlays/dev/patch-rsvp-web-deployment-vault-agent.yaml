@@ -14,7 +14,7 @@ spec:
         vault.hashicorp.com/template-static-secret-render-interval: 30s  
         vault.hashicorp.com/agent-inject-secret-mysecret: "secret/rsvp/toom-secret"
         vault.hashicorp.com/agent-inject-template-mysecret: |
-          {{- with secret "secret/rsvp/mysecret" -}}
+          {{- with secret "secret/rsvp/toom-secret" -}}
           username={{ .Data.data.username }}
           password={{ .Data.data.password }}
           {{- end }}
