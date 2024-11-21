@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: apps91.lab8088.online
+    - host: apps92.lab8088.online
       http:
         paths:
           - path: /sample-toom(/|$)(.*)
