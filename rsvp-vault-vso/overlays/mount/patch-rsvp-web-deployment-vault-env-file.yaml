@@ -34,12 +34,12 @@ spec:
         - name: username
           valueFrom:
             secretKeyRef:
-               name: kubesecret-mysecret
+               name: toom-secret
                key: username
         - name: password
           valueFrom:
             secretKeyRef:
-               name: kubesecret-mysecret
+               name: toom-secret
                key: password 
         ports:
         - containerPort: 5000
@@ -47,4 +47,4 @@ spec:
       volumes:
         - name: secret-volume
           secret:
-            secretName: kubesecret-mysecret
+            secretName: toom-secret
