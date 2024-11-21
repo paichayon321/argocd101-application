@@ -10,10 +10,10 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: apps91.lab8088.online
+    - host: apps92.lab8088.online
       http:
         paths:
-          - path: /vault-agent-0(/|$)(.*)
+          - path: /vault-agent-2(/|$)(.*)
             pathType: Prefix
             backend:
               service:
